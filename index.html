@@ -1,0 +1,196 @@
+<title>BrainUp — Aide &amp; contact</title>
+<style>
+  :root{
+    --bg:#060b1f;
+    --surface:#0f1c40;
+    --surface-2:#16264f;
+    --border:rgba(245,181,58,0.16);
+    --border-strong:rgba(245,181,58,0.4);
+    --text:#f5f2ea;
+    --text-muted:#a7afc9;
+    --text-faint:#6f7796;
+    --accent:#f5b53a;
+    --accent-soft:#ffe9a8;
+    --accent-dim:#e0972a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(1100px 520px at 50% -12%, rgba(245,181,58,0.10), transparent 60%),
+      linear-gradient(180deg, #0d1a3f 0%, var(--bg) 46%);
+    color:var(--text);
+    font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+    padding:64px 24px 96px;
+  }
+  a{color:var(--accent-soft);text-decoration-color:rgba(245,181,58,0.45);text-underline-offset:3px;}
+  a:hover{color:var(--accent);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
+
+  .sheet{max-width:680px;margin:0 auto;}
+
+  .brandrow{display:flex;align-items:center;gap:12px;margin-bottom:40px;}
+  .mark{width:34px;height:34px;flex:none;}
+  .wordmark{font-weight:800;font-size:15px;letter-spacing:0.02em;color:var(--text);}
+  .wordmark span{color:var(--accent);}
+
+  .eyebrow{
+    font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--accent-dim);margin:0 0 14px;
+  }
+  h1{
+    font-size:clamp(28px,4.4vw,38px);font-weight:800;letter-spacing:-0.01em;
+    line-height:1.12;text-wrap:balance;margin:0 0 12px;color:var(--text);
+  }
+  .lede{font-size:16px;color:var(--text-muted);max-width:60ch;margin:0 0 40px;}
+
+  .contactcard{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    background:linear-gradient(135deg, var(--surface-2), var(--surface));
+    border:1px solid var(--border-strong);
+    border-radius:18px;
+    padding:22px 24px;
+    margin-bottom:48px;
+  }
+  .contactcard-label{font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin:0 0 6px;}
+  .contactcard-value{font-size:19px;font-weight:700;color:var(--text);margin:0;}
+  .contactcard-sub{font-size:13px;color:var(--text-faint);margin:4px 0 0;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--accent);color:#241705;
+    font-weight:800;font-size:14px;
+    padding:12px 20px;border-radius:999px;
+    text-decoration:none;white-space:nowrap;
+    box-shadow:0 8px 20px rgba(245,181,58,0.22);
+  }
+  .btn:hover{background:var(--accent-soft);color:#241705;}
+
+  h2.section-title{
+    font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--text-faint);margin:0 0 20px;
+  }
+
+  .faq{margin-bottom:48px;}
+  details{
+    border-bottom:1px solid var(--border);
+    padding:18px 2px;
+  }
+  details:first-of-type{border-top:1px solid var(--border);}
+  summary{
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    font-size:16px;
+    font-weight:700;
+    color:var(--text);
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary .chev{
+    flex:none;
+    width:20px;height:20px;
+    border-radius:999px;
+    border:1px solid var(--border-strong);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--accent);
+    font-size:13px;
+    transition:transform 0.18s ease;
+  }
+  details[open] summary .chev{transform:rotate(45deg);}
+  details p{
+    margin:14px 0 0;
+    color:var(--text-muted);
+    max-width:62ch;
+    font-size:15px;
+  }
+  details a{color:var(--accent-soft);}
+
+  @media (prefers-reduced-motion: reduce){
+    summary .chev{transition:none;}
+  }
+
+  .apple-note{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:16px 18px;
+    font-size:13.5px;
+    color:var(--text-faint);
+    margin-bottom:48px;
+  }
+  .apple-note strong{color:var(--text-muted);}
+
+  hr.rule{border:none;height:1px;background:linear-gradient(90deg, var(--border-strong), transparent);margin:8px 0 32px;}
+
+  footer{display:flex;flex-direction:column;gap:6px;color:var(--text-faint);font-size:13px;}
+  footer .name{color:var(--text-muted);font-weight:600;}
+
+  @media (max-width:520px){
+    body{padding:44px 18px 72px;}
+    .contactcard{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+
+<div class="sheet">
+  <div class="brandrow">
+    <svg class="mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="34" height="34" rx="9" fill="#0f1c40"/>
+      <rect x="0.5" y="0.5" width="33" height="33" rx="8.5" stroke="#f5b53a" stroke-opacity="0.35"/>
+      <path d="M11 22.5V11.5C11 11.5 13.2 10 17 10C20.8 10 21.8 12 20.4 13.4C19.4 14.4 17.8 14.4 17.8 14.4C17.8 14.4 21.6 14.6 22 17.6C22.4 20.6 19.2 22.5 16 22.5H11Z" stroke="#f5b53a" stroke-width="1.6" stroke-linejoin="round"/>
+      <line x1="11" y1="16.6" x2="16.6" y2="16.6" stroke="#f5b53a" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <div class="wordmark">Brain<span>Up</span></div>
+  </div>
+
+  <p class="eyebrow">Aide</p>
+  <h1>Une question, un souci ?</h1>
+  <p class="lede">Écris-nous directement — on répond personnellement, pas de robot ni de ticket qui se perd.</p>
+
+  <div class="contactcard">
+    <div>
+      <p class="contactcard-label">Contact direct</p>
+      <p class="contactcard-value">support@anabasis-technology.com</p>
+      <p class="contactcard-sub">Réponse sous 2 jours ouvrés en général</p>
+    </div>
+    <a class="btn" href="mailto:support@anabasis-technology.com?subject=BrainUp%20-%20Assistance">Envoyer un e-mail</a>
+  </div>
+
+  <h2 class="section-title">Questions fréquentes</h2>
+  <div class="faq">
+    <details open>
+      <summary>Comment restaurer mon abonnement Premium ?<span class="chev">+</span></summary>
+      <p>Si tu as changé de téléphone ou réinstallé l'app, ton abonnement est automatiquement relié à ton identifiant Apple — ouvre l'app connecté avec le même compte App Store et le statut Premium se réactive tout seul.</p>
+    </details>
+    <details>
+      <summary>Comment annuler ou gérer mon abonnement ?<span class="chev">+</span></summary>
+      <p>Les abonnements BrainUp Premium sont gérés directement par Apple : Réglages de ton téléphone → ton nom → Abonnements → BrainUp. BrainUp lui-même ne peut ni prélever ni annuler à ta place.</p>
+    </details>
+    <details>
+      <summary>Comment supprimer mes données ?<span class="chev">+</span></summary>
+      <p>Dans l'app : Réglages → « Supprimer mes données ». Toutes tes données (série, niveau, succès, préférences) sont stockées uniquement sur ton téléphone, donc désinstaller l'app les supprime aussi.</p>
+    </details>
+    <details>
+      <summary>Pourquoi je ne reçois pas mes rappels quotidiens ?<span class="chev">+</span></summary>
+      <p>Vérifie que les notifications sont autorisées pour BrainUp dans les réglages de ton téléphone, puis que le rappel est bien activé dans Réglages de l'app.</p>
+    </details>
+    <details>
+      <summary>Où trouver la politique de confidentialité ?<span class="chev">+</span></summary>
+      <p>Elle est disponible ici : <a href="https://anabasis-technology.github.io/brainup-privacy-public/" target="_blank" rel="noopener">politique de confidentialité BrainUp</a>.</p>
+    </details>
+  </div>
+
+  <div class="apple-note">
+    <strong>Paiements et remboursements</strong> — Les achats et abonnements BrainUp passent par l'App Store. Pour un remboursement, la demande se fait directement auprès d'Apple via <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.
+  </div>
+
+  <hr class="rule" />
+
+  <footer>
+    <span class="name">Anabasis Technology</span>
+    <span>9 Rue des Colonnes, 75002 Paris, France</span>
+  </footer>
+</div>
