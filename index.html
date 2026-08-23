@@ -31,10 +31,34 @@
 
   .sheet{max-width:680px;margin:0 auto;}
 
-  .brandrow{display:flex;align-items:center;gap:12px;margin-bottom:40px;}
+  .brandrow{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:40px;}
+  .brand{display:flex;align-items:center;gap:12px;}
   .mark{width:34px;height:34px;flex:none;}
   .wordmark{font-weight:800;font-size:15px;letter-spacing:0.02em;color:var(--text);}
   .wordmark span{color:var(--accent);}
+
+  .langswitch{
+    display:flex;
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    border-radius:999px;
+    padding:3px;
+    gap:2px;
+  }
+  .langswitch button{
+    appearance:none;
+    border:none;
+    background:transparent;
+    color:var(--text-muted);
+    font-family:inherit;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:0.03em;
+    padding:6px 13px;
+    border-radius:999px;
+    cursor:pointer;
+  }
+  .langswitch button.active{background:var(--accent);color:#241705;}
 
   .eyebrow{
     font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
@@ -129,68 +153,166 @@
   footer{display:flex;flex-direction:column;gap:6px;color:var(--text-faint);font-size:13px;}
   footer .name{color:var(--text-muted);font-weight:600;}
 
+  [data-lang-block="en"]{display:none;}
+
   @media (max-width:520px){
     body{padding:44px 18px 72px;}
     .contactcard{flex-direction:column;align-items:flex-start;}
+    .brandrow{flex-wrap:wrap;}
   }
 </style>
 
 <div class="sheet">
   <div class="brandrow">
-    <svg class="mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect width="34" height="34" rx="9" fill="#0f1c40"/>
-      <rect x="0.5" y="0.5" width="33" height="33" rx="8.5" stroke="#f5b53a" stroke-opacity="0.35"/>
-      <path d="M11 22.5V11.5C11 11.5 13.2 10 17 10C20.8 10 21.8 12 20.4 13.4C19.4 14.4 17.8 14.4 17.8 14.4C17.8 14.4 21.6 14.6 22 17.6C22.4 20.6 19.2 22.5 16 22.5H11Z" stroke="#f5b53a" stroke-width="1.6" stroke-linejoin="round"/>
-      <line x1="11" y1="16.6" x2="16.6" y2="16.6" stroke="#f5b53a" stroke-width="1.6" stroke-linecap="round"/>
-    </svg>
-    <div class="wordmark">Brain<span>Up</span></div>
-  </div>
-
-  <p class="eyebrow">Aide</p>
-  <h1>Une question, un souci ?</h1>
-  <p class="lede">Écris-nous directement — on répond personnellement, pas de robot ni de ticket qui se perd.</p>
-
-  <div class="contactcard">
-    <div>
-      <p class="contactcard-label">Contact direct</p>
-      <p class="contactcard-value">support@anabasis-technology.com</p>
-      <p class="contactcard-sub">Réponse sous 2 jours ouvrés en général</p>
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="34" height="34" rx="9" fill="#0f1c40"/>
+        <rect x="0.5" y="0.5" width="33" height="33" rx="8.5" stroke="#f5b53a" stroke-opacity="0.35"/>
+        <path d="M11 22.5V11.5C11 11.5 13.2 10 17 10C20.8 10 21.8 12 20.4 13.4C19.4 14.4 17.8 14.4 17.8 14.4C17.8 14.4 21.6 14.6 22 17.6C22.4 20.6 19.2 22.5 16 22.5H11Z" stroke="#f5b53a" stroke-width="1.6" stroke-linejoin="round"/>
+        <line x1="11" y1="16.6" x2="16.6" y2="16.6" stroke="#f5b53a" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <div class="wordmark">Brain<span>Up</span></div>
     </div>
-    <a class="btn" href="mailto:support@anabasis-technology.com?subject=BrainUp%20-%20Assistance">Envoyer un e-mail</a>
+    <div class="langswitch" role="group" aria-label="Language / Langue">
+      <button type="button" data-lang-btn="fr">FR</button>
+      <button type="button" data-lang-btn="en">EN</button>
+    </div>
   </div>
 
-  <h2 class="section-title">Questions fréquentes</h2>
-  <div class="faq">
-    <details open>
-      <summary>Comment restaurer mon abonnement Premium ?<span class="chev">+</span></summary>
-      <p>Si tu as changé de téléphone ou réinstallé l'app, ton abonnement est automatiquement relié à ton identifiant Apple — ouvre l'app connecté avec le même compte App Store et le statut Premium se réactive tout seul.</p>
-    </details>
-    <details>
-      <summary>Comment annuler ou gérer mon abonnement ?<span class="chev">+</span></summary>
-      <p>Les abonnements BrainUp Premium sont gérés directement par Apple : Réglages de ton téléphone → ton nom → Abonnements → BrainUp. BrainUp lui-même ne peut ni prélever ni annuler à ta place.</p>
-    </details>
-    <details>
-      <summary>Comment supprimer mes données ?<span class="chev">+</span></summary>
-      <p>Dans l'app : Réglages → « Supprimer mes données ». Toutes tes données (série, niveau, succès, préférences) sont stockées uniquement sur ton téléphone, donc désinstaller l'app les supprime aussi.</p>
-    </details>
-    <details>
-      <summary>Pourquoi je ne reçois pas mes rappels quotidiens ?<span class="chev">+</span></summary>
-      <p>Vérifie que les notifications sont autorisées pour BrainUp dans les réglages de ton téléphone, puis que le rappel est bien activé dans Réglages de l'app.</p>
-    </details>
-    <details>
-      <summary>Où trouver la politique de confidentialité ?<span class="chev">+</span></summary>
-      <p>Elle est disponible ici : <a href="https://anabasis-technology.github.io/brainup-privacy-public/" target="_blank" rel="noopener">politique de confidentialité BrainUp</a>.</p>
-    </details>
+  <div data-lang-block="fr">
+    <p class="eyebrow">Aide</p>
+    <h1>Une question, un souci ?</h1>
+    <p class="lede">Écris-nous directement — on répond personnellement, pas de robot ni de ticket qui se perd.</p>
+
+    <div class="contactcard">
+      <div>
+        <p class="contactcard-label">Contact direct</p>
+        <p class="contactcard-value">support@anabasis-technology.com</p>
+        <p class="contactcard-sub">Réponse sous 2 jours ouvrés en général</p>
+      </div>
+      <a class="btn" href="mailto:support@anabasis-technology.com?subject=BrainUp%20-%20Assistance">Envoyer un e-mail</a>
+    </div>
+
+    <h2 class="section-title">Questions fréquentes</h2>
+    <div class="faq">
+      <details open>
+        <summary>Comment restaurer mon abonnement Premium ?<span class="chev">+</span></summary>
+        <p>Si tu as changé de téléphone ou réinstallé l'app, ton abonnement est automatiquement relié à ton identifiant Apple — ouvre l'app connecté avec le même compte App Store et le statut Premium se réactive tout seul.</p>
+      </details>
+      <details>
+        <summary>Comment annuler ou gérer mon abonnement ?<span class="chev">+</span></summary>
+        <p>Les abonnements BrainUp Premium sont gérés directement par Apple : Réglages de ton téléphone → ton nom → Abonnements → BrainUp. BrainUp lui-même ne peut ni prélever ni annuler à ta place.</p>
+      </details>
+      <details>
+        <summary>Comment supprimer mes données ?<span class="chev">+</span></summary>
+        <p>Dans l'app : Réglages → « Supprimer mes données ». Toutes tes données (série, niveau, succès, préférences) sont stockées uniquement sur ton téléphone, donc désinstaller l'app les supprime aussi.</p>
+      </details>
+      <details>
+        <summary>Pourquoi je ne reçois pas mes rappels quotidiens ?<span class="chev">+</span></summary>
+        <p>Vérifie que les notifications sont autorisées pour BrainUp dans les réglages de ton téléphone, puis que le rappel est bien activé dans Réglages de l'app.</p>
+      </details>
+      <details>
+        <summary>Où trouver la politique de confidentialité ?<span class="chev">+</span></summary>
+        <p>Elle est disponible ici : <a href="https://anabasis-technology.github.io/brainup-privacy-public/?lang=fr" target="_blank" rel="noopener">politique de confidentialité BrainUp</a>.</p>
+      </details>
+    </div>
+
+    <div class="apple-note">
+      <strong>Paiements et remboursements</strong> — Les achats et abonnements BrainUp passent par l'App Store. Pour un remboursement, la demande se fait directement auprès d'Apple via <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.
+    </div>
+
+    <hr class="rule" />
+
+    <footer>
+      <span class="name">Anabasis Technology</span>
+      <span>9 Rue des Colonnes, 75002 Paris, France</span>
+    </footer>
   </div>
 
-  <div class="apple-note">
-    <strong>Paiements et remboursements</strong> — Les achats et abonnements BrainUp passent par l'App Store. Pour un remboursement, la demande se fait directement auprès d'Apple via <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.
+  <div data-lang-block="en">
+    <p class="eyebrow">Help</p>
+    <h1>Got a question or an issue?</h1>
+    <p class="lede">Write to us directly — we reply personally, no bot and no ticket that gets lost.</p>
+
+    <div class="contactcard">
+      <div>
+        <p class="contactcard-label">Direct contact</p>
+        <p class="contactcard-value">support@anabasis-technology.com</p>
+        <p class="contactcard-sub">Usually replies within 2 business days</p>
+      </div>
+      <a class="btn" href="mailto:support@anabasis-technology.com?subject=BrainUp%20-%20Support">Send an email</a>
+    </div>
+
+    <h2 class="section-title">Frequently asked questions</h2>
+    <div class="faq">
+      <details open>
+        <summary>How do I restore my Premium subscription?<span class="chev">+</span></summary>
+        <p>If you've switched phones or reinstalled the app, your subscription is automatically linked to your Apple ID — open the app signed in with the same App Store account, and Premium status reactivates on its own.</p>
+      </details>
+      <details>
+        <summary>How do I cancel or manage my subscription?<span class="chev">+</span></summary>
+        <p>BrainUp Premium subscriptions are managed directly by Apple: your phone's Settings → your name → Subscriptions → BrainUp. BrainUp itself can't charge or cancel on your behalf.</p>
+      </details>
+      <details>
+        <summary>How do I delete my data?<span class="chev">+</span></summary>
+        <p>In the app: Settings → “Delete my data”. All your data (streak, level, achievements, preferences) is stored only on your phone, so uninstalling the app deletes it too.</p>
+      </details>
+      <details>
+        <summary>Why am I not getting my daily reminders?<span class="chev">+</span></summary>
+        <p>Check that notifications are allowed for BrainUp in your phone's settings, then that the reminder is turned on in the app's Settings.</p>
+      </details>
+      <details>
+        <summary>Where can I find the privacy policy?<span class="chev">+</span></summary>
+        <p>It's available here: <a href="https://anabasis-technology.github.io/brainup-privacy-public/?lang=en" target="_blank" rel="noopener">BrainUp privacy policy</a>.</p>
+      </details>
+    </div>
+
+    <div class="apple-note">
+      <strong>Payments and refunds</strong> — BrainUp purchases and subscriptions go through the App Store. For a refund, request it directly from Apple via <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.
+    </div>
+
+    <hr class="rule" />
+
+    <footer>
+      <span class="name">Anabasis Technology</span>
+      <span>9 Rue des Colonnes, 75002 Paris, France</span>
+    </footer>
   </div>
-
-  <hr class="rule" />
-
-  <footer>
-    <span class="name">Anabasis Technology</span>
-    <span>9 Rue des Colonnes, 75002 Paris, France</span>
-  </footer>
 </div>
+
+<script>
+  (function(){
+    var STORAGE_KEY = 'brainup:lang';
+    var titles = { fr: 'BrainUp — Aide & contact', en: 'BrainUp — Help & Contact' };
+    var blocks = document.querySelectorAll('[data-lang-block]');
+    var buttons = document.querySelectorAll('[data-lang-btn]');
+
+    function apply(lang) {
+      blocks.forEach(function(b){ b.style.display = (b.getAttribute('data-lang-block') === lang) ? '' : 'none'; });
+      buttons.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang-btn') === lang); });
+      document.documentElement.lang = lang;
+      document.title = titles[lang] || titles.fr;
+    }
+
+    function detect() {
+      var saved = null;
+      try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+      if (saved === 'fr' || saved === 'en') return saved;
+      var params = new URLSearchParams(window.location.search);
+      var q = params.get('lang');
+      if (q === 'fr' || q === 'en') return q;
+      var nav = (navigator.language || 'fr').toLowerCase();
+      return nav.indexOf('fr') === 0 ? 'fr' : 'en';
+    }
+
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var lang = btn.getAttribute('data-lang-btn');
+        apply(lang);
+        try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+      });
+    });
+
+    apply(detect());
+  })();
+</script>
