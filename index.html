@@ -213,7 +213,7 @@
       </details>
       <details>
         <summary>Où trouver la politique de confidentialité ?<span class="chev">+</span></summary>
-        <p>Elle est disponible ici : <a href="https://anabasis-technology.github.io/brainup-privacy-public/?lang=fr" target="_blank" rel="noopener">politique de confidentialité Cerbo</a>.</p>
+        <p>Elle est disponible ici : <a href="https://www.anabasis-technology.com/cerboprivacypolicy" target="_blank" rel="noopener">politique de confidentialité Cerbo</a>.</p>
       </details>
     </div>
 
@@ -263,7 +263,7 @@
       </details>
       <details>
         <summary>Where can I find the privacy policy?<span class="chev">+</span></summary>
-        <p>It's available here: <a href="https://anabasis-technology.github.io/brainup-privacy-public/?lang=en" target="_blank" rel="noopener">Cerbo privacy policy</a>.</p>
+        <p>It's available here: <a href="https://www.anabasis-technology.com/cerboprivacypolicy" target="_blank" rel="noopener">Cerbo privacy policy</a>.</p>
       </details>
     </div>
 
@@ -288,7 +288,7 @@
     var buttons = document.querySelectorAll('[data-lang-btn]');
 
     function apply(lang) {
-      blocks.forEach(function(b){ b.style.display = (b.getAttribute('data-lang-block') === lang) ? '' : 'none'; });
+      blocks.forEach(function(b){ b.style.display = (b.getAttribute('data-lang-block') === lang) ? 'block' : 'none'; });
       buttons.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang-btn') === lang); });
       document.documentElement.lang = lang;
       document.title = titles[lang] || titles.fr;
